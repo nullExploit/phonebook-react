@@ -28,7 +28,7 @@ export default function PhoneBookBox() {
   };
 
   useEffect(() => {
-    dispatch(loadPhoneBookAsync({ sort, search, limit }));
+    dispatch(loadPhoneBookAsync({ sort, keyword: search, limit }));
   }, [dispatch, sort, search, limit]);
 
   const list = phonebooks.map((item) => (
