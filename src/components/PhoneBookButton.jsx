@@ -42,6 +42,7 @@ export default function PhoneBookButton({ name, phone, editStatus, edit, id }) {
     return (
       <div className="button">
         <FontAwesomeIcon
+          aria-label="editbutton"
           className="buttons"
           onClick={() => {
             dispatch(editPhoneBook(id, name, phone));
