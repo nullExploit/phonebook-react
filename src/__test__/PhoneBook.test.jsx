@@ -1,10 +1,12 @@
 import { fireEvent, render, screen } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 import Providers from "../lib/redux/Provider";
-import { RouterProvider } from "react-router-dom";
-import { router } from "../App";
 import PhoneBookButton from "../components/PhoneBookButton";
 import PhoneBookItem from "../components/PhoneBookItem";
 import PhoneBookDetail from "../components/PhoneBookDetail";
+import PhoneBookSearch from "../components/PhoneBookSearch";
+import PhoneBookAdd from "../components/PhoneBookAdd";
+import PhoneBookBox from "../components/PhoneBookBox";
 
 describe("Should render all phonebook correctly", () => {
   it("Should render phonebook button correctly", () => {
@@ -74,6 +76,7 @@ describe("Should render all phonebook correctly", () => {
         <PhoneBookItem id={1} name="TESTING" phone="0911111111" avatar={null} />
       </Providers>
     );
+
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText("TESTING").tagName).toBe("P");
     expect(screen.getByText("0911111111").tagName).toBe("P");
@@ -141,12 +144,91 @@ describe("Should render all phonebook correctly", () => {
     fireEvent.click(document.querySelectorAll(".buttons")[1]);
   });
 
-  it("Should render view correctly", () => {
-    const { baseElement } = render(
+  it("Should render phonebook search correctly", () => {
+    const setSort = jest.fn();
+    const setSearch = jest.fn();
+
+    const el = (sort) => (
       <Providers>
-        <RouterProvider router={router} />
+        <BrowserRouter>
+          <PhoneBookSearch
+            sort={sort}
+            setSort={setSort}
+            search=""
+            setSearch={setSearch}
+            limit={null}
+          />
+        </BrowserRouter>
       </Providers>
     );
+
+    const { baseElement, rerender } = render(el(false));
+
+    expect(baseElement).toMatchSnapshot();
+    expect(
+      document
+        .querySelector(".sorting-button")
+        .firstElementChild.getAttribute("data-icon")
+    ).toBe("arrow-up-z-a");
+    expect(
+      document
+        .querySelector(".search-bar")
+        .nextElementSibling.firstElementChild.getAttribute("data-icon")
+    ).toBe("magnifying-glass");
+    expect(
+      document
+        .querySelector(".add-button")
+        .firstElementChild.getAttribute("data-icon")
+    ).toBe("user-plus");
+    fireEvent.click(document.querySelector(".sorting-button"));
+    expect(setSort).toHaveBeenCalledTimes(1);
+    rerender(el(true));
+    expect(
+      document
+        .querySelector(".sorting-button")
+        .firstElementChild.getAttribute("data-icon")
+    ).toBe("arrow-down-a-z");
+    fireEvent.change(document.querySelector(".search-bar"), {
+      target: { value: "TEST" },
+    });
+    expect(document.querySelector(".search-bar").value).toBe("TEST");
+    fireEvent.change(document.querySelector(".search-bar"), {
+      target: { value: "TESTING" },
+    });
+    expect(setSearch).toHaveBeenCalledTimes(2);
+  });
+
+  it("Should render phonebook add correctly", () => {
+    const { baseElement } = render(
+      <Providers>
+        <BrowserRouter>
+          <PhoneBookAdd />
+        </BrowserRouter>
+      </Providers>
+    );
+
+    expect(baseElement).toMatchSnapshot();
+    expect(document.querySelectorAll("input")[0].value).toBe("");
+    expect(document.querySelectorAll("input")[1].value).toBe("");
+    fireEvent.change(document.querySelectorAll("input")[0], {
+      target: { value: "TESTING" },
+    });
+    fireEvent.change(document.querySelectorAll("input")[1], {
+      target: { value: "08123123" },
+    });
+    expect(document.querySelectorAll("input")[0].value).toBe("TESTING");
+    expect(document.querySelectorAll("input")[1].value).toBe("08123123");
+  });
+
+  it("Should render phonebook box correctly", () => {
+    const { baseElement } = render(
+      <Providers>
+        <BrowserRouter>
+          <PhoneBookBox />
+        </BrowserRouter>
+      </Providers>
+    );
+
     expect(baseElement).toMatchSnapshot();
     fireEvent.change(document.querySelector(".search-bar"), {
       target: { value: "TEST" },
@@ -156,5 +238,16 @@ describe("Should render all phonebook correctly", () => {
       target: { value: "TES" },
     });
     expect(screen.getByDisplayValue("TES").value).toBe("TES");
+    expect(
+      document
+        .querySelector(".sorting-button")
+        .firstElementChild.getAttribute("data-icon")
+    ).toBe("arrow-up-z-a");
+    fireEvent.click(document.querySelector(".sorting-button"));
+    expect(
+      document
+        .querySelector(".sorting-button")
+        .firstElementChild.getAttribute("data-icon")
+    ).toBe("arrow-down-a-z");
   });
 });

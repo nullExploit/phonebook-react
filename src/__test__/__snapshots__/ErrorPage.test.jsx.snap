@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render error correctly Should render error 1`] = `
+<body>
+  <div>
+    <div
+      class="container"
+      id="error-page"
+    >
+      <h1>
+        Oops!
+      </h1>
+      <p>
+        Sorry, an unexpected error has occurred.
+      </p>
+      <p>
+        <i />
+      </p>
+    </div>
+  </div>
+</body>
+`;

@@ -5,7 +5,7 @@ import ErrorPage from "./components/ErrorPage";
 import PhoneBookAdd from "./components/PhoneBookAdd";
 import Providers from "./lib/redux/Provider";
 
-export const router = createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: "/",
     element: <PhoneBookBox />,

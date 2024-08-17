@@ -1,5 +1,111 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Should render all phonebook correctly Should render phonebook add correctly 1`] = `
+<body>
+  <div>
+    <section>
+      <div
+        class="input"
+      >
+        <input
+          name=""
+          type="text"
+        />
+        <input
+          name=""
+          type="text"
+        />
+      </div>
+      <div
+        class="inputbutton"
+      >
+        <button>
+          save
+        </button>
+        <button>
+          cancel
+        </button>
+      </div>
+    </section>
+  </div>
+</body>
+`;
+
+exports[`Should render all phonebook correctly Should render phonebook box correctly 1`] = `
+<body>
+  <div>
+    <section>
+      <div
+        class="search-container"
+      >
+        <button
+          class="sorting-button"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-arrow-up-z-a "
+            data-icon="arrow-up-z-a"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 576 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M183.6 42.4C177.5 35.8 169 32 160 32s-17.5 3.8-23.6 10.4l-88 96c-11.9 13-11.1 33.3 2 45.2s33.3 11.1 45.2-2L128 146.3 128 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-301.7 32.4 35.4c11.9 13 32.2 13.9 45.2 2s13.9-32.2 2-45.2l-88-96zM320 64c0 17.7 14.3 32 32 32l50.7 0-73.4 73.4c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8l128 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-50.7 0 73.4-73.4c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L352 32c-17.7 0-32 14.3-32 32zm96 192c-12.1 0-23.2 6.8-28.6 17.7l-64 128-16 32c-7.9 15.8-1.5 35 14.3 42.9s35 1.5 42.9-14.3l7.2-14.3 88.4 0 7.2 14.3c7.9 15.8 27.1 22.2 42.9 14.3s22.2-27.1 14.3-42.9l-16-32-64-128C439.2 262.8 428.1 256 416 256zM395.8 400L416 359.6 436.2 400l-40.4 0z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+        <input
+          class="search-bar"
+          type="text"
+        />
+        <span>
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-magnifying-glass "
+            data-icon="magnifying-glass"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+              fill="currentColor"
+            />
+          </svg>
+        </span>
+        <button
+          class="add-button"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-user-plus "
+            data-icon="user-plus"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 640 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3zM504 312l0-64-64 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l64 0 0-64c0-13.3 10.7-24 24-24s24 10.7 24 24l0 64 64 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-64 0 0 64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="phonebooks"
+      />
+    </section>
+  </div>
+</body>
+`;
+
 exports[`Should render all phonebook correctly Should render phonebook button correctly 1`] = `
 <body>
   <div>
@@ -174,77 +280,72 @@ exports[`Should render all phonebook correctly Should render phonebook item corr
 </body>
 `;
 
-exports[`Should render all phonebook correctly Should render view correctly 1`] = `
+exports[`Should render all phonebook correctly Should render phonebook search correctly 1`] = `
 <body>
   <div>
-    <section>
-      <div
-        class="search-container"
+    <div
+      class="search-container"
+    >
+      <button
+        class="sorting-button"
       >
-        <button
-          class="sorting-button"
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-arrow-up-z-a "
+          data-icon="arrow-up-z-a"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 576 512"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <svg
-            aria-hidden="true"
-            class="svg-inline--fa fa-arrow-up-z-a "
-            data-icon="arrow-up-z-a"
-            data-prefix="fas"
-            focusable="false"
-            role="img"
-            viewBox="0 0 576 512"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M183.6 42.4C177.5 35.8 169 32 160 32s-17.5 3.8-23.6 10.4l-88 96c-11.9 13-11.1 33.3 2 45.2s33.3 11.1 45.2-2L128 146.3 128 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-301.7 32.4 35.4c11.9 13 32.2 13.9 45.2 2s13.9-32.2 2-45.2l-88-96zM320 64c0 17.7 14.3 32 32 32l50.7 0-73.4 73.4c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8l128 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-50.7 0 73.4-73.4c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L352 32c-17.7 0-32 14.3-32 32zm96 192c-12.1 0-23.2 6.8-28.6 17.7l-64 128-16 32c-7.9 15.8-1.5 35 14.3 42.9s35 1.5 42.9-14.3l7.2-14.3 88.4 0 7.2 14.3c7.9 15.8 27.1 22.2 42.9 14.3s22.2-27.1 14.3-42.9l-16-32-64-128C439.2 262.8 428.1 256 416 256zM395.8 400L416 359.6 436.2 400l-40.4 0z"
-              fill="currentColor"
-            />
-          </svg>
-        </button>
-        <input
-          class="search-bar"
-          type="text"
-        />
-        <span>
-          <svg
-            aria-hidden="true"
-            class="svg-inline--fa fa-magnifying-glass "
-            data-icon="magnifying-glass"
-            data-prefix="fas"
-            focusable="false"
-            role="img"
-            viewBox="0 0 512 512"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
-              fill="currentColor"
-            />
-          </svg>
-        </span>
-        <button
-          class="add-button"
-        >
-          <svg
-            aria-hidden="true"
-            class="svg-inline--fa fa-user-plus "
-            data-icon="user-plus"
-            data-prefix="fas"
-            focusable="false"
-            role="img"
-            viewBox="0 0 640 512"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3zM504 312l0-64-64 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l64 0 0-64c0-13.3 10.7-24 24-24s24 10.7 24 24l0 64 64 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-64 0 0 64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"
-              fill="currentColor"
-            />
-          </svg>
-        </button>
-      </div>
-      <div
-        class="phonebooks"
+          <path
+            d="M183.6 42.4C177.5 35.8 169 32 160 32s-17.5 3.8-23.6 10.4l-88 96c-11.9 13-11.1 33.3 2 45.2s33.3 11.1 45.2-2L128 146.3 128 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-301.7 32.4 35.4c11.9 13 32.2 13.9 45.2 2s13.9-32.2 2-45.2l-88-96zM320 64c0 17.7 14.3 32 32 32l50.7 0-73.4 73.4c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8l128 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-50.7 0 73.4-73.4c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L352 32c-17.7 0-32 14.3-32 32zm96 192c-12.1 0-23.2 6.8-28.6 17.7l-64 128-16 32c-7.9 15.8-1.5 35 14.3 42.9s35 1.5 42.9-14.3l7.2-14.3 88.4 0 7.2 14.3c7.9 15.8 27.1 22.2 42.9 14.3s22.2-27.1 14.3-42.9l-16-32-64-128C439.2 262.8 428.1 256 416 256zM395.8 400L416 359.6 436.2 400l-40.4 0z"
+            fill="currentColor"
+          />
+        </svg>
+      </button>
+      <input
+        class="search-bar"
+        type="text"
       />
-    </section>
+      <span>
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-magnifying-glass "
+          data-icon="magnifying-glass"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+            fill="currentColor"
+          />
+        </svg>
+      </span>
+      <button
+        class="add-button"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-user-plus "
+          data-icon="user-plus"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 640 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3zM504 312l0-64-64 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l64 0 0-64c0-13.3 10.7-24 24-24s24 10.7 24 24l0 64 64 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-64 0 0 64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"
+            fill="currentColor"
+          />
+        </svg>
+      </button>
+    </div>
   </div>
 </body>
 `;
