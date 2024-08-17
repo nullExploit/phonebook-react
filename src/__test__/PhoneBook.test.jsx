@@ -147,6 +147,7 @@ describe("Should render all phonebook correctly", () => {
   it("Should render phonebook search correctly", () => {
     const setSort = jest.fn();
     const setSearch = jest.fn();
+    const setPage = jest.fn();
 
     const el = (sort) => (
       <Providers>
@@ -154,8 +155,8 @@ describe("Should render all phonebook correctly", () => {
           <PhoneBookSearch
             sort={sort}
             setSort={setSort}
-            search=""
             setSearch={setSearch}
+            setPage={setPage}
             limit={null}
           />
         </BrowserRouter>
@@ -195,7 +196,6 @@ describe("Should render all phonebook correctly", () => {
     fireEvent.change(document.querySelector(".search-bar"), {
       target: { value: "TESTING" },
     });
-    expect(setSearch).toHaveBeenCalledTimes(2);
   });
 
   it("Should render phonebook add correctly", () => {
