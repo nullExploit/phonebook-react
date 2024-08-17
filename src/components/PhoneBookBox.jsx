@@ -15,21 +15,21 @@ export default function PhoneBookBox() {
   const dispatch = useDispatch();
   const [sort, setSort] = useState(false);
   const [search, setSearch] = useState("");
-  const [limit, setLimit] = useState(48);
+  const [page, setPage] = useState(1);
 
   window.onscroll = () => {
     if (
-      limit < totalData &&
+      page < totalData &&
       window.scrollY + window.innerHeight ===
         document.documentElement.scrollHeight
     ) {
-      setLimit((prev) => (prev += 10));
+      setPage((prev) => (prev += 1));
     }
   };
 
   useEffect(() => {
-    dispatch(loadPhoneBookAsync({ sort, keyword: search, limit }));
-  }, [dispatch, sort, search, limit]);
+    dispatch(loadPhoneBookAsync({ sort, keyword: search, page }));
+  }, [dispatch, sort, search, page]);
 
   const list = phonebooks.map((item) => (
     <PhoneBookItem
@@ -46,9 +46,8 @@ export default function PhoneBookBox() {
       <PhoneBookSearch
         sort={sort}
         setSort={setSort}
-        search={search}
         setSearch={setSearch}
-        limit={limit}
+        setPage={setPage}
       />
       <div className="phonebooks">{list}</div>
     </section>

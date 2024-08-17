@@ -1,11 +1,12 @@
 import { api } from "../../api";
 
-export const load = (sort, keyword, limit) =>
+export const load = (sort, keyword, limit, page) =>
   api.get("api/phonebooks", {
     params: {
       sort: sort ? (sort === true ? "desc" : "asc") : "asc",
       keyword,
       limit,
+      page
     },
   });
 

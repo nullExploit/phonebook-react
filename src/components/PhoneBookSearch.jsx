@@ -5,19 +5,10 @@ import {
   faUserPlus,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { loadPhoneBookAsync } from "../lib/redux/phonebooks/PhoneBookSlice";
 
-export default function PhoneBookSearch({
-  sort,
-  setSort,
-  search,
-  setSearch,
-  limit,
-}) {
+export default function PhoneBookSearch({ sort, setSort, setSearch, setPage }) {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   return (
     <div className="search-container">
@@ -25,6 +16,7 @@ export default function PhoneBookSearch({
         className="sorting-button"
         onClick={() => {
           setSort((prev) => !prev);
+          setPage(1);
         }}
       >
         <FontAwesomeIcon icon={!sort ? faArrowUpZA : faArrowDownAZ} />
@@ -32,10 +24,10 @@ export default function PhoneBookSearch({
       <input
         className="search-bar"
         type="text"
-        onChange={(evt) => setSearch(evt.target.value)}
-        onKeyUp={() =>
-          dispatch(loadPhoneBookAsync({ sort, keyword: search, limit }))
-        }
+        onKeyUp={(evt) => {
+          setSearch(evt.target.value);
+          setPage(1);
+        }}
       />
       <span>
         <FontAwesomeIcon icon={faMagnifyingGlass} />
